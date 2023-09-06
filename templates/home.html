@@ -1,0 +1,405 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>BizPage Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+  <link href="{% static 'css/animate.css' %}" rel="stylesheet">
+  <link href="{% static 'css/vendor.css' %}" rel="stylesheet">
+  <link href="{% static 'css/min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/icons.css' %}" rel="stylesheet">
+  <link href="{% static 'css/glightbox.css' %}" rel="stylesheet">
+  <link href="{% static 'css/swiper.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container-fluid">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-xl-11 d-flex align-items-center justify-content-between">
+          <h1 class="logo"><a href="index.html">Infinite Co</a></h1>
+          <nav id="navbar" class="navbar">
+            <ul>
+              <li><a class="nav-link scrollto active" href="#hero">Bosh sahifa</a></li>
+              <li><a class="nav-link scrollto" href="#about">Biz haqimizda</a></li>
+              <li><a class="nav-link scrollto" href="#services">Xizmatlar</a></li>
+              <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
+              <li><a class="nav-link scrollto" href="#team">Bizning jamoa</a></li>
+              <li><a class="nav-link scrollto" href="#contact">Bog'lanish</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section id="hero">
+    <div class="hero-container">
+      <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <ol id="hero-carousel-indicators" class="carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+          {% for detail in main_details %}
+            <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %} corusel-item-{{forloop.counter0}}" style="background-image: url('{{detail.image.url}}');">
+              <div class="carousel-container">
+                <div class="container">
+                  <h2 class="animate__animated animate__fadeInDown">{{detail.title}}</h2>
+                  <p class="animate__animated animate__fadeInUp">{{detail.description}}</p>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+  <main id="main">
+    <section id="about">
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h3 style="color: #18d26e;">Biz haqimizda</h3>
+          <p>Har bir yirik kompaniya nafaqat o'ziga, balki uning yonida turgan va unga ishonganlarga ham minnatdorchilik bildirishi kerak. Zero, bizning ishimizdagi eng muhim tamoyil ishonchdir.
+            Ishonch nafaqat mijozlar va hamkorlarning sodiqligini ta'minlaydi, balki o'zimizga bo'lgan talabimizni oshiradi. Biz ming yillik insoniy an’analar asosida qurilgan munosabatlar asosida hamkorlik qilamiz.
+          </p>
+        </header>
+
+        <div class="row about-cols">
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="about-col">
+              <div class="img">
+                <img src="assets/img/about-mission.jpg" alt="" class="img-fluid">
+                <div class="icon"><i class="bi bi-bar-chart"></i></div>
+              </div>
+              <h2 class="title"><a href="#">Maqsadimiz</a></h2>
+              <p>
+                "Infinite Co" kompaniyasining maqsadi - IT sohasida yetuk kadrlar tayyorlash va bu kadrlar bilan Dunyo IT bozorini zabt etishdan iborat.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="about-col">
+              <div class="img">
+                <img src="assets/img/about-plan.jpg" alt="" class="img-fluid">
+                <div class="icon"><i class="bi bi-brightness-high"></i></div>
+              </div>
+              <h2 class="title"><a href="#">Rejalarimiz</a></h2>
+              <p>
+                "Infinite Co" direktori Muxtoriddin Erkiboyevning so'zlariga ko'ra, jamoaning rejalari yosh dasturchilarga o'zlari ustida ishlash va shu bilan birga rasmiy ravishda ishga joylashish imkoniyatini yaratish va yoshlarni IT sohasida o'z o'rnini topishda yordam berish.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="about-col">
+              <div class="img">
+                <img src="assets/img/about-vision.jpg" alt="" class="img-fluid">
+                <div class="icon"><i class="bi bi-calendar4-week"></i></div>
+              </div>
+              <h2 class="title"><a href="#">Natijalarimiz</a></h2>
+              <p>
+                Mana bir necha yilki bizning o'quv markazimiz Paxtaobod tumanida o'z faoliyatini olib bormoqda. Shu kunga qadar bu yerda ta'lim olgan yosh o'quvchilarimiz hayotda o'z o'rnini topib kelmoqda
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <section id="services">
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header wow fadeInUp">
+          <h3 style="color: #18d26e;">Xizmatlar</h3><br><br>
+        </header>
+
+        <div class="row">
+
+          {% for service in services %}
+            <div class="col-lg-4 col-md-6 box" id="{{service.text}}" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i class="{{service.icons}}"></i></div>
+              <h4 class="title"><a href="#{{service.text}}">{{service.title}}</a></h4>
+              <p class="description">{{service.text}}</p>
+            </div>
+          {% endfor %}
+
+        </div>
+
+      </div>
+    </section>
+    <section id="call-to-action">
+      <div class="container text-center" data-aos="zoom-in">
+        <h3 style="color: #18d26e;">Shu jamoa orasida siz ham bo'lishingiz mumkin</h3>
+        <p>Biz bilan birga yuksalmoqchimisiz? Keling, bizga kerakligingizni isbotlang! Jamoaning ajralmas bo‘lagiga aylaning.</p>
+        <a class="cta-btn" href="#">Bog'lanish</a>
+      </div>
+    </section>
+    <section id="skills">
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h3 style="color: #18d26e;">Bizning mahoratimiz</h3><br>
+        </header><br><br>
+
+        <div class="skills-content">
+
+          {% for ability in abilities %}
+            <div class="progress">
+              <div style="background-color: #18d26e;" class="progress-bar bg-aqua" role="progressbar" aria-valuenow="{{ability.percent}}" aria-valuemin="0" aria-valuemax="100">
+                <span class="skill"><b>{{ability.title}}</b><i class="val"><b>{{ability.percent}}%</b></i></span>
+              </div>
+            </div>
+          {% endfor %}
+
+        </div>
+
+      </div>
+    </section>
+    <section id="facts">
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h3 style="color: #18d26e;">Faktlar</h3>
+        </header>
+
+        <div class="row counters">
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="120" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Mijozlar</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Loyihalar</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Qo'llab-quvvatlash soatlari</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Mehnatkashlar</p>
+          </div>
+
+        </div>
+
+        <div class="facts-img">
+          <img src="assets/img/facts-img.png" alt="" class="img-fluid">
+        </div>
+
+      </div>
+    </section>
+    <section id="portfolio" class="section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h3 style="color: #18d26e;" class="section-title">Portfoliolarimiz</h3>
+        </header>
+
+      <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+        {% for portfolio in portfolios %}
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="{{portfolio.image.url}}" class="img-fluid" alt="">
+                <a href="{{portfolio.image.url}}" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="bi bi-plus"></i></a>
+              </figure>
+
+              <div class="portfolio-info">
+                <h4><a href="{{portfolio.link}}">{{portfolio.title}}</a></h4>
+                <p>{{portfolio.title}}</p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+
+      </div>
+
+      </div>
+    </section>
+    <section id="clients">
+      <div class="container" data-aos="zoom-in">
+
+        <header class="section-header">
+          <h3 style="color: #18d26e;">Bizning Hamkorlarimiz</h3>
+        </header>
+
+        <div class="clients-slider swiper">
+          <div class="swiper-wrapper align-items-center">
+            {% for partner in partners %}
+              <div class="swiper-slide"><img src="{{partner.image.url}}" class="img-fluid" alt="{{partner.title}}"></div>
+            {% endfor %}
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section>
+    <section id="team">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h3 style="color: #18d26e;">Jamoamiz</h3>
+          <p>Bizning jamoamiz bir necha yildan buyon IT sohasida ish yuritayotgan malakali ustozlardan iboratdir</p>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h3 style="color: #18d26e;">Aloqa</h3>
+        </div>
+
+        <div class="row contact-info">
+
+          <div class="col-md-4">
+            <div class="contact-address">
+              <i class="bi bi-geo-alt"></i>
+              <h3>Manzilimiz</h3>
+              <address>Andijon viloyati Paxtaobod tumani</address>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-phone">
+              <i class="bi bi-phone"></i>
+              <h3>Telefon</h3>
+              <p><a href="tel:+155895548855">+998 99 904 55 76</a></p>
+            </div>
+          </div>
+          
+          <div class="col-md-4">
+            <div class="contact-phone">
+              <i class="bi bi-phone"></i>
+              <h3>Murojaat uchun</h3>
+              <p><a href="tel:+155895548855">@Mukhtoriddin</a></p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form">
+          <form action="{% url 'create' %}" method="post" role="form" class="php-email-form">{% csrf_token %}
+            <div class="row">
+              <div class="form-group col-md-6">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Ism" required>
+              </div>
+              <div class="form-group col-md-6">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email manzil" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-md-6">
+                <input type="text" name="subject" class="form-control" id="subject" placeholder="Yo'nalish" required>
+              </div>
+              <div class="form-group col-md-6">
+                <input type="tel" class="form-control" name="number" id="number" placeholder="Raqam" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="message" rows="5" placeholder="Xabar" required></textarea>
+            </div>
+            <div class="my-3">
+              <div class="loading">Jo'natilmoqda...</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Sizning xabaringiz yuborildi. Rahmat!</div>
+            </div>
+            <div class="text-center"><button type="submit">Xabar yuborish</button></div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>Infinite Co</h3>
+            <p></p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Foydali linklar</h4>
+            <ul>
+              <li><a class="nav-link scrollto active" href="#hero">Bosh sahifa</a></li>
+              <li><a class="nav-link scrollto" href="#about">Biz haqimizda</a></li>
+              <li><a class="nav-link scrollto" href="#services">Xizmatlar</a></li>
+              <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
+              <li><a class="nav-link scrollto" href="#team">Bizning jamoa</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Aloqa</h4>
+            <p>
+              Andijon Viloyati <br>
+              Paxtaobod tumani<br>
+              <strong>Telefon:</strong>+998 99 904 55 76<br>
+            </p>
+
+            <div class="social-links">
+              <a href="https://instagram.com/infinite_co_markazi" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="https://t.me/Infinite_IT_CENTER_channel" class="instagram"><i class="bi bi-telegram"></i></a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Mualliflik huquqi <strong><a href="https://t.me/Mukhtoriddin">Infinite Co</a></strong> Barcha huquqlar himoyalangan
+      </div>
+    </div>
+  </footer>
+  
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <script src="{% static 'js/vanilla.js' %}"></script>
+  <script src="{% static 'js/aio.js' %}"></script>
+  <script src="{% static 'js/bundle.js' %}"></script>
+  <script src="{% static 'js/box.js' %}"></script>
+  <script src="{% static 'js/layout.js' %}"></script>
+  <script src="{% static 'js/min.js' %}"></script>
+  <script src="{% static 'js/waypoints.js' %}"></script>
+  <script src="{% static 'js/validate.js' %}"></script>
+
+  <script src="{% static 'js/main.js' %}"></script>
+{% endblock content %}
+
